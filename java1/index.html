@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Extra Mile Java 1</title>
+</head>
+
+<body>
+    <div class="parameter" id="courseNo">n/a</div>
+    <div class="parameter" id="courseName">Extra Mile</div>
+    <div class="parameter" id="lessonNo">1</div>
+    <div class="parameter" id="lessonName">Extra Mile Java</div>
+    <div class="parameter" id="learningOutcomes">n/a</div>
+    <div class="parameter" id="level">4</div>
+    <div class="parameter" id="notes">n/a</div>
+    <div class="parameter" id="language">java</div>
+    <div class="parameter" id="multi">true</div>
+    <div class="parameter" id="javaruntime">new</div>
+    <script src="https://www.nooblab.com/nooblabsupport-extended.js"></script>
+    <h1>Extra mile for extra hard working students</h1>
+
+    <div class="section" id="introduction">
+        <h2 class="title">About these exercises</h2>
+        <p>
+            These exercises are for students who want to go the extra mile.
+            They are not part of the course, but are available for students who want to learn more.<br /><br />
+            There are no medals I am not going to test you on these exercises, but I will be happy to help you if you get stuck.<br /><br />
+            I belive the best way to learn is to play around with the code rather than following strict instructions.<br /><br />
+            Feel free to play around and experiment with the code.
+        </p>
+        <h3>What are we doing to do here</h3>
+        <p>
+            In this exercise, we are going to create a simple "database" program in Java.
+            The problem will display a menu, asking the user to choose an option.
+            The user can add a new Student to the database, list all students in the database, advance all students to the next year, or exit the program.
+            Maybe I will add more options if I can come up with some ideas.
+        </p>
+
+        <h3>What you need to know</h3>
+        <p>
+            I am assuming that you already know how to do the following:
+            <ul>
+                <li>How to use a <code>Scanner</code> to read input from the user</li>
+                <li>How to use a loop to repeat a block of code</li>
+                <li>How to use an if statement to make a decision</li>
+                <li>How to create a class in Java</li>
+                <li>How to create an object of a class</li>
+                <li>How to call a method on an object</li>
+            </ul>
+
+            You might not know how to create an array in Java, but I will show you how to do that.
+        </p>
+
+        <h3>Terminology I am going to use</h3>
+        <p>
+            Since it might not be clear how things are referred to in Object Oriented Programming, and I am not sure if Paul is going to teach you this,
+            I am going to use the following OOP terminology:
+            <ul>
+                <li><b>Property</b>: A property is a variable that is part of a class. For example, a <code>Student</code> class might have a property called <code>name</code>.</li>
+                <li><b>Method</b>: A method is a function that is part of a class. For example, a <code>Student</code> class might have a method called <code>advanceYear</code>.</li>
+                <li><b>Parameter</b>: A parameter is a variable that is passed to a method. For example, <code>setName</code> might take a parameter called <code>name</code>.</li>
+            </ul>
+
+            This is not a definitive or strict definition, but it should help you understand what I am talking about.
+            Some developers are referring to properties as fields <b>¯\(°_o)/¯</b> ... this is fine actually, you can use either term.
+        </p>
+
+        <h3>That takes me to:</h3>
+        <h4>Variable scope</h4>
+        <p>
+            The scope of a variable is the part of the program where the variable is accessible.
+            In Java, there are three levels of scope:
+            <ul>
+                <li><b>Class level</b>: A variable that is defined at the class level is accessible from anywhere within the class - it is called a <b>property</b> of that class.</li>
+                <li><b>Method level</b>: A variable that is defined within a method is only accessible within that method.</li>
+                <li><b>Block level</b>: A variable that is defined within a block of code is only accessible within that block of code. (<i>this is not relevant for this exercise</i>)</li>
+            </ul>
+
+            To illustrate this, consider the following code:
+        <div class="codebundle" style="margin-top: 1em; position: relative; cursor: pointer;">
+            <pre class="codefile" data-filename="Main.java" style="display: none;">public class Main
+{
+    // This is a property
+    public static String name;
+
+    public static void main(String[] args)
+    {
+        // This is a method level variable
+        String localName = "Alice";
+
+        // This is a block level variable
+        if (true) {
+            String blockName = "Bob";
+        }
+
+        // This is a property
+        name = "Charlie";
+
+        // This works
+        System.out.println(localName);
+
+        // This works
+        System.out.println(name);
+
+        // This does not work
+        System.out.println(blockName);
+
+        printName();
+    }
+
+    public static void printName()
+    {
+        // This works
+        System.out.println(name);
+
+        // This does not work
+        System.out.println(localName);
+
+        // This does not work
+        System.out.println(blockName);
+    }
+}</pre></div>
+        </p>
+
+        <!-- <img src="http://127.0.0.1/extramile/java1/img001.jpg" alt=""> -->
+
+        <div class="qqmain" style="margin-top: 1em">
+            Why <code>blockName</code> causes error in the main method?<br />
+            <div class="distractor wrong">I don't know<br />
+                <div class="response">The reason is that <code>blockName</code> is a block level variable defined within an if block, and is only accessible within that block, as soon as we leave the block, the variable is no longer accessible.</div>
+            </div>
+            <div class="distractor correct">Because <code>blockName</code> is a block level variable<br />
+                <div class="response">Correct. The reason is that <code>blockName</code> is a block level variable defined within an if block, and is only accessible within that block, as soon as we leave the block, the variable is no longer accessible.</div>
+            </div>
+            <div class="distractor wrong">Because <code>blockName</code> is a method level variable<br />
+                <div class="response">Wrong. The <code>blockName</code> variable is a block level variable, and is only accessible within the block in which it is defined.</div>
+            </div>
+        </div>
+
+        <div class="qqmain" style="margin-top: 1em">
+            Why <code>localName</code> causes error in the <code>printName()</code> method?<br />
+            <div class="distractor wrong">Because <code>printName</code> runs before <code>main</code> method<br />
+                <div class="response">Double wrong. The <code>main</code> method runs first, but that is not the reason why <code>localName</code> causes an error in the <code>printName()</code> method.</div>
+            </div>
+            <div class="distractor wrong">Because <code>printName</code> is a method<br />
+                <div class="response">Wrong. The fact that <code>printName</code> is a method does not affect the scope of <code>localName</code>.</div>
+            </div>
+            <div class="distractor correct">Because <code>localName</code> is a method level variable defined in the <code>main</code> method<br />
+                <div class="response">Correct. <code>localName</code> is a method level variable defined in the <code>main</code> method, and is only accessible within that method.</div>
+            </div>
+        </div>
+
+        <h2>One more thing</h2>
+        <p>
+            You can use static on a property in Java just like you can use static on a method.
+            A static property is bound to the class, not to an object of the class, you don't need to create an object to access a static property.
+
+            Have a look at the following code to see what I mean:
+        </p>
+
+        <div class="codebundle" style="margin-top: 1em; position: relative; cursor: pointer;">
+<pre class="codefile" data-filename="Main.java" style="display: none;">public class Main
+{
+    public static void main(String[] args)
+    {
+        // Accessing a static property
+        System.out.println("Number of students: " + Student.studentCount);
+        
+        Student student1 = new Student("Alice");
+        Student student2 = new Student("Bob");
+        
+        // Accesing a static property
+        System.out.println("Number of students: " + Student.studentCount);
+
+        // This works
+        System.out.println("Student 1 name: " + student1.name);
+
+        // This does not work
+        System.out.println(Student.name);
+
+        // You can do this, but it will cause the program to run in an infinite loop
+        Main.main(args);
+    }
+}</pre>
+<pre class="codefile" data-filename="Student.java" style="display: none;">public class Student
+{
+    // This is a static property
+    public static int studentCount = 0;
+    public String name;
+
+    public Student(String name)
+    {
+        this.name = name;
+        Student.studentCount++;
+    }
+}</pre></div>
+    </div>
+
+    <div class="section" id="menu-in-java">
+        <h2 class="title">Building a menu in Java</h2>
+
+        <p>
+            Start with the following code bundle:
+        </p>
+
+        <div class="codebundle" style="margin-top: 1em; position: relative; cursor: pointer;">
+            <pre class="codefile" data-filename="Main.java" style="display: none;">import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Hello World");
+    }
+}</pre></div>
+
+        <p>
+            You should probably run the program to make sure it runs.
+        </p>
+
+        <h3>The plan</h3>
+        <h4>Planning the functionality</h4>
+        <p>
+            The plan is to create a menu that looks like this:
+<pre>==== Menu ====
+1. Add student
+2. List students
+3. Advance year
+4. Exit</pre>
+
+            The program will display the menu, and then ask the user to choose an option.
+            Depending on the option chosen, the program will run different method.
+            One of the methods will ask the user to input student data,<br>
+            another method will list all students in the database,<br>
+            the third method will advance all students to the next year,<br>
+            Lastly, the fourth method will exit the program.
+        </p>
+
+        <h4>Planning the <code>Main</code> code</h4>
+        <p>
+            We are going to create a few convenience methods.
+            It's generally a good idea separate your code into small pieces that do one thing, instead of having one big block of code that does everything.
+            This makes your code easier to read and maintain.
+        </p>
+        <p>
+            If I was writing the code, I would create the following static methods in my <code>Main</code> class.
+            <ul>
+                <li><code>printMenu()</code></li>
+                <li><code>takeOption()</code></li>
+                <li><code>inputStudent()</code></li>
+                <li><code>printStudents()</code></li>
+                <li><code>advanceYears()</code></li>
+            </ul>
+
+            For now, these do nothing.
+        </p>
+
+        <p>
+            I would also add a static method called <code>scanner</code> to the <code>Main</code> class.
+            This would ensure that I only have to create one <code>Scanner</code> and allow me to reuse it across all my static methods.
+        </p>
+
+        <p>
+            Then I would create the simplest implementation I can think of for these methods.<br>
+            So that: <br>
+            The <code>takeInput()</code> method asks the user for a single int value.<br>
+            The <code>inputStudent()</code> method asks user for an input in sequence, but does not do anything with it.<br>
+            <code>printStudents()</code> just displays "Work in progress" and <br>
+            <code>advanceYears()</code> does nothing.
+
+            And I would create an infinite loop in my <code>main</code> method, it would call the printMenu and <code>takeOption()</code> methods, and depending on the options selected call one of the other methods.
+        </p>
+        <br><br><br>
+        <p>
+            It would result in the following code:<br><br>
+
+            WARNING: Only press on the bundle if you are struggling and can't progress.<br>
+            It is really much better if you try to figure this thing on your own.<br>
+            What is the point of doing these exercises otherwise?<br>
+
+        <div class="codebundle" style="margin-top: 1em; position: relative; cursor: pointer;">
+            <pre class="codefile" data-filename="Main.java" style="display: none;">import java.util.Scanner;
+
+public class Main
+{
+    public static Scanner scanner;
+
+    public static void main(String[] args)
+    {
+        scanner = new Scanner(System.in);
+
+        while (true) {
+            printMenu();
+            String option = takeInput();
+            if (option.equalsIgnoreCase("1"))
+            {
+                inputStudent();
+            }
+            else if (option.equalsIgnoreCase("2"))
+            {
+                printStudents();
+            }
+            else if (option.equalsIgnoreCase("3"))
+            {
+                advanceYears();
+            }
+            else if (option.equalsIgnoreCase("4"))
+            {
+                break; // This "breaks" the loop, forcing it to stop
+            }
+        }
+    }
+
+    public static void printMenu()
+    {
+        System.out.println("== MENU ==");
+        System.out.println("1) Add student");
+        System.out.println("2) Advance year");
+        System.out.println("3) Display data");
+        System.out.println("4) Exit");
+    }
+
+    /**
+     * Separate method in case we want to validate the input in the future
+     */
+    public static String takeInput()
+    {
+        return scanner.nextLine();
+    }
+
+    public static void inputStudent()
+    {
+        System.out.println("Enter name");
+        String name = scanner.nextLine();
+
+        System.out.println("Enter age");
+        String age = scanner.nextLine();
+
+        System.out.println("Enter course");
+        String course = scanner.nextLine();
+
+        System.out.println("Enter year");
+        String year = scanner.nextLine();
+    }
+
+    public static void printStudents()
+    {
+        System.out.println("Work in progress");
+    }
+
+    public static void advanceYears()
+    {}
+}</pre></div>
+        </p>
+    </div>
+
+    <div class="section" id="adding-student-class">
+        <h2 class="title">Adding a Student class</h2>
+
+        <p>Try to implement the following class in a new file</p>
+        <div style="border: 1px solid black; background-color: white; width: 180px;">
+            <div style="border-bottom: 1px solid black; text-align: center; font-weight: bolder">Student</div>
+            <div style="border-bottom: 1px solid black; padding: 0.5em">+name : String<br>+age : age<br>+year : int<br>+course : String</div>
+            <div style="padding: 0.5em">+advanceYear()<br>+printInfo()</div>
+        </div>
+
+        <p>The add two constructors to the Student class</p>
+        <ul>
+            <li>One constructor that takes <code>name</code>, <code>age</code> and <code>course</code> as parameters</li>
+            <li>One constructor that takes <code>name</code>, <code>age</code>, <code>course</code> and <code>year</code> as parameters</li>
+        </ul>
+
+        <p>Then test the class by creating a new instance of the <code>Student</code> class in the <code>main</code> method
+            and calling the <code>printInfo()</code> method on the object.</p>
+
+        If you've done this, you can continue with the next section.
+    </div>
+</body>
