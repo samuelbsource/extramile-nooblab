@@ -264,12 +264,13 @@ public class Main
         <p>
             Then I would create the simplest implementation I can think of for these methods.<br>
             So that: <br>
-            The <code>takeInput()</code> method asks the user for a single int value.<br>
+            The <code>printMenu()</code> actually prints the menu (easy!).<br>
+            The <code>takeOption()</code> method asks the user for a single int value.<br>
             The <code>inputStudent()</code> method asks user for an input in sequence, but does not do anything with it.<br>
             <code>printStudents()</code> just displays "Work in progress" and <br>
             <code>advanceYears()</code> does nothing.
 
-            And I would create an infinite loop in my <code>main</code> method, it would call the printMenu and <code>takeOption()</code> methods, and depending on the options selected call one of the other methods.
+            And I would create an infinite loop in my <code>main</code> method, it would call the <code>printMenu</code> and <code>takeOption()</code> methods, and depending on the options selected call one of the other methods.
         </p>
         <br><br><br>
         <p>
@@ -292,7 +293,7 @@ public class Main
 
         while (true) {
             printMenu();
-            String option = takeInput();
+            String option = takeOption();
             if (option.equalsIgnoreCase("1"))
             {
                 inputStudent();
@@ -324,7 +325,7 @@ public class Main
     /**
      * Separate method in case we want to validate the input in the future
      */
-    public static String takeInput()
+    public static String takeOption()
     {
         return scanner.nextLine();
     }
