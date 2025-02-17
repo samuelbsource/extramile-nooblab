@@ -1,0 +1,73 @@
+<div class="section" id="main-class-implementation">
+    <h2 class="title">Revisiting basic concepts</h2>
+    <p>
+        Before implementing the application, let's revisit some key Java concepts that will be essential in this challange.<br>
+        Feel free to revisit this page any time you forget something.
+    </p>
+
+    <p>
+        <strong>Java Syntax:</strong> Java programs are structured into classes and methods. The <code>Main</code> class with static <code>main</code> method serves as the entry point for execution.<br>
+        Each statement must end with a semicolon <code>;</code>, and code blocks are enclosed in curly braces. <code>{}</code><br>
+    </p>
+
+    <p>
+        <strong>"Primitive" Data Types:</strong> Java supports various data types, including:
+    <ul>
+        <li><code>int</code> - Stores integers (whole numbers).</li>
+        <li><code>double</code> - Stores floating-point numbers.</li>
+        <li><code>boolean</code> - Stores true/false values.</li>
+        <li><code>char</code> - Stores single characters.</li>
+        <li><code>String</code> - Stores text (a sequence of characters).</li>
+    </ul>
+    In Java, primitive data types are the most basic types of data.<br>
+    There are more types like <code>short</code> and <code>float</code>, but these are just variations of the types already mentioned above.
+    <strong>REMEMBER</strong> Java does not allow changing a variable's type after declaration.
+    </p>
+
+    {{#getJsonContext '[
+        { "text": "It will compile and run successfully.", "response": "Incorrect. Java does not allow changing a variable\'s type once declared.", "correct": false },
+        { "text": "It will cause a compilation error.", "response": "Correct! Java is a statically-typed language, meaning that once a variable is declared with a specific type, it cannot be reassigned a different type.", "correct": true },
+        { "text": "It will throw a runtime exception.", "response": "Incorrect. The error occurs at compile time, preventing the program from running (nothing will run at all!).", "correct": false }
+    ]'}}
+    {{> question text="What will happen when you run the following Java code?\n\n<pre>public class Main {\n    public static void main(String[] args) {\n        int number = 10;\n        number = \"Hello\";\n    }\n}</pre>" answers=this }}
+    {{/getJsonContext}}
+
+    <pre>public class Main {
+    public static void main(String[] args) {
+        int number = 10;
+        number = "Hello";
+    }
+}
+</pre>
+
+    <p>
+        To read more about primitive types, have a look at the official Java documentation: <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html" target="_blank">Primitive Data Types</a>
+    </p>
+
+    </p>
+    <strong>Arrays:</strong> Arrays in Java allow storing multiple values of the same type in a single variable. Arrays have fixed, predefined size and can be accessed using indices from from 0 to (array length - 1):
+    <ul>
+        <li>Declaring an array: <code>int[] numbers = new int[5];</code> - Creates an array of size 5, where each element is initially set to 0.</li>
+        <li>Initializing an array: <code>int[] numbers = {1, 2, 3, 4, 5};</code> - Creates an array with specified values. The size will be 5.</li>
+        <li>Accessing elements: <code>int firstNumber = numbers[0];</code></li>
+        <li>Looping through an array: <code>for (int i = 0; i < numbers.length; i++) { System.out.println(numbers[i]); }</code> - Iterates through each element and prints its value.</li>
+    </ul>
+    Arrays are useful for managing collections of data efficiently, but their size is fixed upon declaration and cannot be changed.<br>
+    If you need bigger array, you need to create a new one and "copy" all the values from the old array to the new one.<br>
+    There exist more useful data type in Java called <code>List</code>, it has a dynamic size, but we've not covered it yet in our course.
+    For more detailed information about arrays, refer to the official Java documentation: <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html" target="_blank">Arrays</a>
+    </p>
+
+    <p>
+        <strong>Control Flow:</strong> Java uses control structures to determine the flow of execution:
+    <ul>
+        <li><code>if (true) { /* do something */ } else { /* do something else */ } </code> statements allow for conditional execution of code.</li>
+        <li><code>for (int i = 0; i <= 10; i++) { /* do something from 0 to 10 */ }</code> and <code>while (condition) { /* do something while condition is true */ }</code> loops enable repetitive execution of statements.</li>
+    </ul>
+    For more detailed information, refer to the official Java documentation: <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/flow.html" target="_blank">Java Control Flow Documentation</a>
+    </p>
+
+    <p>
+        Understanding these fundamentals will help you write clean and effective Java code as you implement the application.
+    </p>
+</div>

@@ -1,0 +1,9 @@
+<div class="qqmain" style="margin-top: 1em">
+    {{{ text }}}<br />
+    {{#each answers}}
+    <div class="distractor {{#if correct}}correct{{else}}wrong{{/if}}">
+        {{{ text }}}<br />
+        <div class="response">{{{ response }}}</div>
+    </div>
+    {{/each}}
+</div>

@@ -377,4 +377,10 @@ public class Main
 
         If you've done this, you can continue with the next section.
     </div>
+
+    {{#getJsonContext '[{ "text": "One", "response": "One response", "correct": true }, { "text": "Two", "response": "Two response" }, { "text": "Three", "response": "Three response" }]'}}
+    {{> question text="Hello" answers=this }}
+    {{/getJsonContext}}
+    
+    {{{ insertBundle "starter" }}}
 </body>

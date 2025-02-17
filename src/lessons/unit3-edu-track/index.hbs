@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <div class="parameter" id="courseNo">{{courseNo}}</div>
+    <div class="parameter" id="courseName">{{courseName}}</div>
+    <div class="parameter" id="lessonNo">{{lessonNo}}</div>
+    <div class="parameter" id="lessonName">{{lessonName}}</div>
+    <div class="parameter" id="learningOutcomes">{{learningOutcomes}}</div>
+    <div class="parameter" id="level">{{level}}</div>
+    <div class="parameter" id="notes">{{notes}}</div>
+    <div class="parameter" id="language">{{language}}</div>
+    <div class="parameter" id="multi">{{multi}}</div>
+    <div class="parameter" id="javaruntime">{{javaruntime}}</div>
+    <script src="https://www.nooblab.com/nooblabsupport-extended.js"></script>
+    <h1>{{title}}</h1>
+
+    {{#each sections}}
+    {{> (lookup . 'name')}}
+    {{/each}}
+
+</body>
+
+</html>

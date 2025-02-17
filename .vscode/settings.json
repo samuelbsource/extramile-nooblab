@@ -1,0 +1,6 @@
+{
+  "[html]": {
+    "editor.rulers": [120]
+  },
+  "html.format.wrapLineLength": 0
+}

@@ -1,0 +1,11 @@
+title: "Transitioning from Procedural to Object-Oriented Programming"
+courseNo: "n/a"
+courseName: "Extra Mile Java Programming"
+lessonNo: 1
+lessonName: "Transitioning from Procedural to Object-Oriented Programming"
+learningOutcomes: "Students will reinforce their Java fundamentals, develop a menu-driven terminal application, and transition to Object-Oriented Programming to improve maintainability and scalability."
+level: 3
+notes: "This lesson builds upon existing Java knowledge and emphasizes hands-on practice in the nooblab environment."
+language: "java"
+multi: true
+javaruntime: "new"

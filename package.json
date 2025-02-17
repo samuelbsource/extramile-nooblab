@@ -1,0 +1,53 @@
+{
+  "name": "extramile-nooblab",
+  "version": "1.0.0",
+  "description": "Extra exercises for nooblab environment, a free DLC if like.",
+  "main": "build.js",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "nodemon",
+    "dev": "http-server dist --port 3000",
+    "tunnel": "npx localtunnel --port 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelbsource/extramile-nooblab.git"
+  },
+  "keywords": [
+    "static-site-generator",
+    "virtual-learning",
+    "education",
+    "e-learning",
+    "interactive-learning",
+    "lesson-builder",
+    "course-creator",
+    "nooblab",
+    "online-education",
+    "curriculum-development",
+    "teaching-tool",
+    "lesson-planner",
+    "self-paced-learning",
+    "programming-education",
+    "learning-platform",
+    "code-education",
+    "sandbox-environment",
+    "interactive-coding",
+    "course-management"
+  ],
+  "author": "Samuel Boczek <samuelboczek@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samuelbsource/extramile-nooblab/issues"
+  },
+  "homepage": "https://github.com/samuelbsource/extramile-nooblab#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "localtunnel": "^2.0.2",
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "yaml": "^2.7.0"
+  }
+}
