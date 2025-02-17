@@ -1,11 +1,62 @@
 <div class="section" id="main-class-implementation">
     <h2 class="title">Implementing the Application in the Main Class</h2>
     <p>
-        In this section, you will implement the entire application inside the <code>Main</code> class, without creating additional objects. The goal is to understand the challenges of procedural programming before transitioning to Object-Oriented Programming (OOP).
+        In this section, you will implement the entire application inside the <code>Main</code> class, without creating additional objects.<br>
+        The goal is to understand the challenges of procedural programming before transitioning to Object-Oriented Programming (OOP).
     </p>
+
+    <p>
+        We want to create something that looks like the following:<br>
+        You can guess the behaviour, or implement something different, there are no negative points for guessing badly!<br>
+    </p>
+<pre>==== Edu Track - main menu ====
+1. Add student
+2. List students
+3. Edit student
+4. Remove student
+5. Exit</pre>
+
+<pre>==== Edu Track - add student ====
+Name: Joe
+University: Kingston University
+Course: Computer Science
+Year: 1
+Is home student [Y/n]? Y
+</pre>
+
+<pre>==== Edu Track - list students ====
+0. Avery
+1. Sofia
+2. Elijah
+3. Noor
+4. null
+</pre>
+
+<pre>==== Edu Track - edit student ====
+Student ID: 3
+Name: Nuri
+University: (unchanged)
+Course: (unchanged)
+Year: 2
+Is home student [y/n]? (unchanged)
+</pre>
+
+<pre>==== Edu Track - remove student ====
+Student ID: 2
+Student Elijah was removed from the system.
+</pre>
+
+<pre>==== Edu Track ====
+Then you for using Edu Track!
+</pre>
 
     <p>
         You can start with the following code, it's just a simple program that prints "Hello World" and imports Scanner class that we will need later, it's a good starting point.
     </p>
     {{{ insertBundle "starter" }}}
+
+    <h3>Challenge #1</h3>
+    <p>
+        Create a new instance of the Scanner class.<br>
+    </p>
 </div>
