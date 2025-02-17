@@ -24,14 +24,6 @@
     <strong>REMEMBER</strong> Java does not allow changing a variable's type after declaration.
     </p>
 
-    {{#getJsonContext '[
-        { "text": "It will compile and run successfully.", "response": "Incorrect. Java does not allow changing a variable\'s type once declared.", "correct": false },
-        { "text": "It will cause a compilation error.", "response": "Correct! Java is a statically-typed language, meaning that once a variable is declared with a specific type, it cannot be reassigned a different type.", "correct": true },
-        { "text": "It will throw a runtime exception.", "response": "Incorrect. The error occurs at compile time, preventing the program from running (nothing will run at all!).", "correct": false }
-    ]'}}
-    {{> question text="What will happen when you run the following Java code?\n\n<pre>public class Main {\n    public static void main(String[] args) {\n        int number = 10;\n        number = \"Hello\";\n    }\n}</pre>" answers=this }}
-    {{/getJsonContext}}
-
     <pre>public class Main {
     public static void main(String[] args) {
         int number = 10;
@@ -39,6 +31,14 @@
     }
 }
 </pre>
+
+    {{#getJsonContext '[
+        { "text": "It will compile and run successfully.", "response": "Incorrect. Java does not allow changing a variable\'s type once declared.", "correct": false },
+        { "text": "It will cause a compilation error.", "response": "Correct! Java is a statically-typed language, meaning that once a variable is declared with a specific type, it cannot be reassigned a different type.", "correct": true },
+        { "text": "It will throw a runtime exception.", "response": "Incorrect. The error occurs at compile time, preventing the program from running (nothing will run at all!).", "correct": false }
+    ]'}}
+    {{> question text="What will happen when you run the above Java code?" answers=this }}
+    {{/getJsonContext}}
 
     <p>
         To read more about primitive types, have a look at the official Java documentation: <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html" target="_blank">Primitive Data Types</a>
