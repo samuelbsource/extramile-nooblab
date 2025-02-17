@@ -10,6 +10,24 @@
         Each statement must end with a semicolon <code>;</code>, and code blocks are enclosed in curly braces. <code>{}</code><br>
     </p>
 
+    <h3>Class vs Object</h3>
+    <p>
+        I really want to emphasize this: we write <strong>classes</strong>, which serve as <i>blueprints</i> for creating <strong>objects</strong>.<br>
+        When we create a new object, we are creating an <strong>INSTANCE</strong> of a class.<br>
+        <ul>
+            <li><code>new Scanner(System.in);</code> - Creates an INSTANCE of the Scanner class, which is a new object of type Scanner.</li>
+            <li><code>new Student("Joe", 21);</code> - Creates an INSTANCE of the Student class with the name "Joe" and age 21.</li>
+        </ul>
+        You should think of classes as new <i>types</i> of variables. For example, you have <strong>int</strong>, <strong>boolean</strong>, and <strong>String</strong>.<br>
+        You can create your own types using classes, such as <strong>Student</strong>, <strong>House</strong>, or <strong>Car</strong>.<br>
+        One key difference between a primitive type like <code>int</code> and a class like <code>Student</code> is that to create a <code>Student</code> object, you need to use the <code>new</code> keyword.
+    </p>
+    <pre>int number = 0;
+// vs
+Student someStudent = new Student();
+    </pre>
+
+
     <h3>"Primitive" Data Types</h3>
     <p>
         Java supports various data types, including:
@@ -69,6 +87,44 @@
         <li><code>for (int i = 0; i <= 10; i++) { /* do something from 0 to 10 */ }</code> and <code>while (condition) { /* do something while condition is true */ }</code> loops enable repetitive execution of statements.</li>
     </ul>
     For more detailed information, refer to the official Java documentation: <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/flow.html" target="_blank">Java Control Flow Documentation</a>
+    </p>
+
+    <h3>Basic input and output</h3>
+    <p>
+        Java provides various ways to interact with the console for input and output operations.<br>
+        The following are what we've learned in the class + some small bits that I think are useful.<br>
+    <ul>
+        <li><code>System.out.println("Hello");</code> - Print "Hello" with a new line.</li>
+        <li><code>System.out.print("Hello");</code> - Print "Hello" without jumping to a new line!</li>
+    </ul>
+
+        <strong>Reading User Input</strong><br>
+        To accept user input, Java provides the <code>Scanner</code> class.<br>
+        Before using it, you must import it at the top of your file:
+        </p>
+        
+        <pre>import java.util.Scanner; // Import at the beginning of the file
+
+public class Main {
+  /* Other code */
+}</pre>
+        
+        <p>
+            Importing <code>Scanner</code> alone is not enough; you also need to create an <strong>INSTANCE</strong> of the class.<br>
+            <code>Scanner scanner = new Scanner(System.in);</code> - This creates a new <code>Scanner</code> object and stores it in the <code>scanner</code> variable.<br><br>
+        
+            <strong>Reading Different Data Types</strong>
+        <ul>
+            <li><code>String text = scanner.nextLine();</code> - Reads a full line of text.</li>
+            <li><code>int number = Integer.parseInt(scanner.nextLine());</code> - Reads an integer.</li>
+            <li><code>double decimal = Double.parseDouble(scanner.nextLine());</code> - Reads a decimal number.</li>
+        </ul>
+        
+        <strong>Note:</strong><br>
+        The <code>Scanner</code> class provides methods like <code>nextInt()</code>, but I recommend avoiding them as they may not work as expected in certain cases.<br>
+        This is just my opinion, but I find it more reliable to read input as a <code>String</code> and then parse it using Java’s built-in functions.
+
+        <code>Scanner</code> documentation can be found here: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html" target="_blank">Class Scanner Documentation</a>
     </p>
 
     <p>
