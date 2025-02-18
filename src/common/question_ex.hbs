@@ -8,11 +8,11 @@
     {{/each}}
 </div>
 <script>
-    document.getElementById("{{ id }}").getElementsByClassName("distractor").forEach(function (element) {
+    for (var element of document.getElementById("{{ id }}").getElementsByClassName("distractor")) {
         element.addEventListener("click", function (event) {
             if (event.target.getAttribute("enables") !== "") {
                 document.getElementById(event.target.getAttribute("enables")).style.display = "block";
             }
         });
-    });
+    }
 </script>
