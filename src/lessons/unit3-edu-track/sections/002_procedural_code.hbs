@@ -1,13 +1,13 @@
 <div class="section" id="main-class-implementation">
     <h2 class="title">Implementing the Application in the Main Class</h2>
     <p>
-        In this section, you will implement the entire application inside the <code>Main</code> class, without creating additional objects.<br>
-        The goal is to understand the challenges of procedural programming before transitioning to Object-Oriented Programming (OOP).
+        In this section, you will implement the entire application within the <code>Main</code> class, without creating additional objects.<br>
+        The goal is to experience the challenges of procedural programming before transitioning to Object-Oriented Programming (OOP).
     </p>
-
+    
     <p>
-        We want to create something that looks like the following:<br>
-        You can guess the behaviour, or implement something different, there are no negative points for guessing badly!<br>
+        Your task is to build a simple menu-driven application that follows the structure outlined below.<br>
+        Try to infer the intended behavior or implement something slightly different - there’s no penalty for making different design choices!
     </p>
 <div class="fluid-container">
 <pre class="tui-design">==== Edu Track - main menu ====
@@ -52,21 +52,27 @@ Thank you for using Edu Track!
 </pre>
 </div>
     <p>
-        You can start with the following code, it's just a simple program that prints "Hello World" and imports Scanner class that we will need later, it's a good starting point.
+        To get started, here’s a basic program that prints "Hello World" and imports the <code>Scanner</code> class, which will be useful later.<br>
+        This serves as a solid foundation before expanding the program.
     </p>
     {{{ insertBundle "starter" }}}
 
     <p>
-        I encourage you to think how you can solve this problem yourself.<br>
-        Open notepad, and note down individual steps.<br>
-        Remember, a part of this challange is to try create this program without using any additional classes.<br>
-        <strong>Tip:</strong> You might need a lot of arrays.<br>
-        Since arrays are fixed size, you can adopt similar approach to the problem as old computer games:<br>
-        Have fixed number of <strong>slots</strong>, 5 for example, and only allow that fixed amount of entries.<br>
-        <br><br>
+        Before jumping into coding, take some time to plan your approach.<br>
+        Open a notepad and jot down the individual steps you need to implement.<br>
+        A key part of this challenge is structuring the program <strong>without using additional classes.</strong><br>
+    </p>
 
-        I have written down some user stories below.<br>
-        You can think of a user story as a <strong>test case</strong> that would involve a real user.<br>
+    <p>
+        <strong>Tip:</strong> You may need to rely heavily on arrays.<br>
+        Since arrays have a fixed size, you can take inspiration from early computer games:<br>
+        Allocate a fixed number of <strong>slots</strong> (e.g., five) and limit the number of entries accordingly.<br>
+    </p>
+
+    <h3>Understanding User Stories</h3>
+    <p>
+        Below are some user stories that describe how a real user would interact with your program.<br>
+        Think of these as <strong>test cases</strong> - each one represents a feature that should be implemented.
     </p>
 
     <h3>Story #1</h3>
@@ -131,4 +137,24 @@ Thank you for using Edu Track!
         <strong>I want to:</strong> Exit the program when I input "5".<br>
         <strong>So that:</strong> I can close the application when I’m done using it.
     </p>
+
+    <h3>Final Implementation</h3>
+    <p>
+        How is it going?<br>
+        If you’re really struggling, you can take a look at the reference implementation I’ve written.<br>
+        However, I strongly encourage you to try building the program on your own first.<br>
+        The best way to learn is through hands-on experience!
+    </p>
+
+    {{#getJsonContext '[
+    { "id": "muc28q1", "text": "Yes, and I want to see your code.", "response": "Incorrect. Try doing it again by yourself, one more time.", "correct": false, "enables": "muc28q3" },
+    { "id": "muc28q2", "text": "No, I made it by myself.", "response": "Amazing! You can continue to the next section.", "correct": true },
+    { "id": "muc28q3", "text": "I reeaaly need help!", "response": "Fine, I\'ve added my code below, you can try it, BUT REMEMBER TO FIRST SAVE YOUR OWN CODE", "correct": true, "hidden": true, "enables": "procedural-code" }
+    ]'}}
+    {{> question_ex text="Are you struggling?" answers=this }}
+    {{/getJsonContext}}
+
+    <div id="procedural-code" style="display: none;">
+        {{{ insertBundle "procedural-code-example" }}}
+    </div>
 </div>
