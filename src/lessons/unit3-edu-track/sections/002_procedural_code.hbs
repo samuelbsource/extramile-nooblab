@@ -148,10 +148,10 @@ Thank you for using Edu Track!
 
     {{#getJsonContext '[
     { "id": "muc28q1", "text": "Yes, and I want to see your code.", "response": "Incorrect. Try doing it again by yourself, one more time.", "correct": false, "enables": "muc28q3" },
-    { "id": "muc28q2", "text": "No, I made it by myself.", "response": "Amazing! You can continue to the next section.", "correct": true },
+    { "id": "muc28q2", "text": "No, I made it by myself.", "response": "Amazing! You can continue to the next section.", "correct": true, "enables": "" },
     { "id": "muc28q3", "text": "I reeaaly need help!", "response": "Fine, I\'ve added my code below, you can try it, BUT REMEMBER TO FIRST SAVE YOUR OWN CODE", "correct": true, "hidden": true, "enables": "procedural-code" }
     ]'}}
-    {{> question_ex text="Are you struggling?" answers=this }}
+    {{> question_ex id="muc28" text="Are you struggling?" answers=this }}
     {{/getJsonContext}}
 
     <div id="procedural-code" style="display: none;">

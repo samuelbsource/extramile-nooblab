@@ -11,7 +11,7 @@
     document.getElementById("{{ id }}").getElementsByClassName("distractor").forEach(function (element) {
         element.addEventListener("click", function (event) {
             if (event.target.getAttribute("enables") !== "") {
-                document.getElementById("{{ enables }}").style.display = "block";
+                document.getElementById(event.target.getAttribute("enables")).style.display = "block";
             }
         });
     });
