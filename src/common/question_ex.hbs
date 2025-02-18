@@ -1,0 +1,18 @@
+<div id="{{ id }}" class="qqmain" style="margin-top: 1em">
+    {{{ text }}}<br />
+    {{#each answers}}
+    <div id="{{ id }}" class="distractor {{#if correct}}correct{{else}}wrong{{/if}}" style="display: {{#if hidden}}none{{else}}block{{/if}};" data-enables="{{ enables }}">
+        {{{ text }}}<br />
+        <div class="response">{{{ response }}}</div>
+    </div>
+    {{/each}}
+</div>
+<script>
+    document.getElementById("{{ id }}").getElementsByClassName("distractor").forEach(function (element) {
+        element.addEventListener("click", function (event) {
+            if (event.target.getAttribute("enables") !== "") {
+                document.getElementById("{{ enables }}").style.display = "block";
+            }
+        });
+    });
+</script>
