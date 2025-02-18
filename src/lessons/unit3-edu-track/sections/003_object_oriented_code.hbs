@@ -1,0 +1,41 @@
+<div class="section" id="main-class-implementation">
+    <h2 class="title">Rewriting the Application with Object-Oriented Code</h2>
+    <p>
+        In this section, you will refactor the application using Object-Oriented Programming (OOP).<br>
+        The goal is to help you understand the benefits of OOP and how it improves code readability and maintainability.<br><br>
+
+        First, take a moment to analyze the code you've written so far.<br>
+        Grab a notepad and think about ways to improve its readability.<br>
+        Consider the challenges you faced when writing the code without separate classes.<br>
+        Identify which parts of the code feel unnecessarily complex.<br>
+        Ask yourself: What parts of the code could be abstracted to simplify the main logic?<br><br>
+
+        Write down any issues you find, then group them into categories.<br>
+        Here are some example categories to help you get started:<br>
+        <ul>
+            <li><strong>Input/Output</strong> - Handling user interactions and validating input.</li>
+            <li><strong>Student Management</strong> - Managing student records, such as searching for students or adding new ones.</li>
+        </ul>
+        <br><br>
+    </p>
+    
+    {{#getJsonContext '[
+    { "text": "Is this an Input/Output problem?", "response": "Yes, you can consider this an input/output problem since it involves displaying data to the user.", "correct": true },
+    { "text": "Is this a Student Management issue?", "response": "Correct. Since we are formatting user data, it makes sense to implement this as a function of the Student class.", "correct": true },
+    { "text": "Does this belong to a unique problem category?", "response": "Yes. If we need to display the same data in multiple formats, it would be useful to implement data formatting as a separate class.", "correct": true }
+    ]'}}
+    {{> question text="Think about how to format student data for display" answers=this }}
+    {{/getJsonContext}}
+    
+    <p>
+        There isn't a single correct answer for this exercise.<br>
+        The best approach depends on the application’s requirements and the needs of your client or organization.<br>
+        It's helpful to think ahead and ask yourself the following questions:<br>
+        <ul>
+            <li>Where would other developers expect to find this code if they needed to modify it?</li>
+            <li>How would changes in requirements affect this implementation? What if we needed to support multiple output formats or make it customizable?</li>
+        </ul>
+        
+        If you're curious about how large organizations handle similar problems, take a look at the following example:
+    </p>
+</div>
