@@ -10,7 +10,7 @@
 <script>
     for (var element of document.getElementById("{{ id }}").getElementsByClassName("distractor")) {
         element.addEventListener("click", function (event) {
-            if (event.target.getAttribute("enables") !== "") {
+            if (event.target.getAttribute("enables") !== null) {
                 document.getElementById(event.target.getAttribute("enables")).style.display = "block";
             }
         });
