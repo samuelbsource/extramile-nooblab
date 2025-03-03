@@ -1,0 +1,11 @@
+title: "Blank java workspace"
+courseNo: "n/a"
+courseName: "Blank Java"
+lessonNo: 1
+lessonName: "Blank java workspace"
+learningOutcomes: "Explore java on their own."
+level: 1
+notes: "This lesson builds upon existing Java knowledge and emphasizes hands-on practice in the nooblab environment."
+language: "java"
+multi: true
+javaruntime: "new"

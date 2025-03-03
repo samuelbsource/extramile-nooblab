@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <div class="parameter" id="courseNo">{{courseNo}}</div>
+    <div class="parameter" id="courseName">{{courseName}}</div>
+    <div class="parameter" id="lessonNo">{{lessonNo}}</div>
+    <div class="parameter" id="lessonName">{{lessonName}}</div>
+    <div class="parameter" id="learningOutcomes">{{learningOutcomes}}</div>
+    <div class="parameter" id="level">{{level}}</div>
+    <div class="parameter" id="notes">{{notes}}</div>
+    <div class="parameter" id="language">{{language}}</div>
+    <div class="parameter" id="multi">{{multi}}</div>
+    <div class="parameter" id="javaruntime">{{javaruntime}}</div>
+    <script src="https://www.nooblab.com/nooblabsupport-extended.js"></script>
+    <style>
+        .fluid-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .tui-design {
+            border: black solid 1px;
+            padding: 8px;
+        }
+        #topnav, #navbar, #content, #horizontaldrag, #toolbar .maximisebutton {
+            display: none;
+        }
+        #toolbar, #editor-wrapper, #output-outer {
+            width: 100%;
+        }
+        #changeThemeBtn {
+            position: relative;
+            float: right;
+            background: none;
+            border: none;
+            padding: 0 8px;
+            font-size: 18px;
+            cursor: pointer;
+            top: 3px;
+        }
+        #docsLink {
+            color: black;
+            font-size: 80%;
+            text-decoration: none;
+            height: 21px;
+            line-height: 13px;
+            padding: 0px 3px 0px 8px !important;
+        }
+        #docsLink:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <h1>{{title}}</h1>
+
+    <div class="section" id="blank">
+        <h2 class="title">Blank java workspace</h2>
+        {{{ insertBundle "starter" }}}
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Loading noobEx script ...");
+
+            const toolbar = document.getElementById('toolbar');
+
+            /* bundle insert */
+            const starterBundleInput = document.createElement('INPUT');
+            starterBundleInput.id = "insertStarterBundle";
+            starterBundleInput.type = "button";
+            starterBundleInput.value = "Insert starter bundle";
+            starterBundleInput.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                pasteCodeBundle(document.getElementById('codebundle-starter'));
+            });
+
+            /* docs insert */
+            const docsLink = document.createElement('A');
+            docsLink.id = "docsLink";
+            docsLink.innerHTML = "Open documentation";
+            docsLink.href = "https://devdocs.io/openjdk~8/java/io/printstream#println-java.lang.String-";
+            docsLink.target = "_blank";
+
+            /* theme chooser */
+            const themeChooser = document.createElement('BUTTON');
+            themeChooser.id = "changeThemeBtn";
+            themeChooser.innerHTML = '<i class="fa fa-paint-brush"></i>';
+            themeChooser.addEventListener('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                openThemeChooser();
+            });
+
+            toolbar.insertBefore(starterBundleInput, document.getElementById('gettersAndSetters'));
+            toolbar.insertBefore(docsLink, document.getElementById('gettersAndSetters'));
+            toolbar.insertBefore(themeChooser, document.getElementById('gettersAndSetters'));
+        })
+    </script>
+</body>
+
+</html>
