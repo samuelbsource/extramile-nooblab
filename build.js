@@ -26,7 +26,7 @@ console.log("");
 
 // Read through each lesson inside the /src directory and produce output inside /dist
 for (const lessonDir of await fs.readdir(LESSONS_DIR, 'utf-8')) {
-  if (lessonDir === "unit3-edu-track") {
+  if (lessonDir !== "java1") {
     console.log(`Generating lesson ${lessonDir} ...`);
 
     // Read lesson config file
@@ -34,7 +34,7 @@ for (const lessonDir of await fs.readdir(LESSONS_DIR, 'utf-8')) {
     const configData = parseYAML(configRaw);
 
     // Find what sections to include in the lesson
-    const sections = await fs.readdir(joinPath(LESSONS_DIR, lessonDir, "sections"), 'utf-8').then(x => x.map(y => ({ name: y.slice(0, -4), filename: y })));
+    const sections = await fs.readdir(joinPath(LESSONS_DIR, lessonDir, "sections"), 'utf-8').then(x => x.map(y => ({ name: y.slice(0, -4), filename: y }))).catch(x => []);
 
     // Read bundles
     const bundles = await fs.readdir(joinPath(LESSONS_DIR, lessonDir, "bundles"), 'utf-8').then(async bundleDirs => {
@@ -55,7 +55,7 @@ for (const lessonDir of await fs.readdir(LESSONS_DIR, 'utf-8')) {
         });
       }
       return bundles;
-    });
+    }).catch(x => []);
 
     // Register local helpers
     Handlebars.registerHelper('insertBundle', function(bundleName, options) {
